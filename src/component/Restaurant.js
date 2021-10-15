@@ -5,3 +5,5 @@ function Restaurant(props){
         </p>
     );
 }
+
+export default Restaurant;
