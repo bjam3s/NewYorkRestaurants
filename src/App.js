@@ -17,10 +17,11 @@ import Restaurants from "./component/Restaurants";
 import Restaurant from "./component/Restaurant";
 import NotFound from "./component/NotFound";
 import About from "./component/About";
+import { render } from "@testing-library/react";
 
 function App() {
   const [searchString, setSearchString] = useState("");
-  
+
   let history = useHistory();
   function handleSubmit(e) {
     e.preventDefault();
@@ -58,6 +59,31 @@ function App() {
           </Form>
         </Navbar.Collapse>
       </Navbar>
+
+      <Container>
+        <Row>
+          <Col>
+          <Switch>
+            <route exact path = "/">
+              <Redirect to = "/restaurants"/>
+            </route>
+            <route exact path = "/about">
+              <About/> 
+            </route>
+            <route exact path = "/Restaurants">
+              <Restaurants/>
+            </route>
+            <route exact path = "/Restaurant/:id">
+              <Restaurant/>
+            </route>
+            <route>
+              <NotFound/>
+            </route>
+          </Switch>
+          </Col>
+        </Row>
+      </Container>
+
       <br />
     </>
   );
