@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import {
   Button,
   Col,
@@ -17,7 +17,6 @@ import Restaurants from "./component/Restaurants";
 import Restaurant from "./component/Restaurant";
 import NotFound from "./component/NotFound";
 import About from "./component/About";
-import { render } from "@testing-library/react";
 
 function App() {
   const [searchString, setSearchString] = useState("");
@@ -59,32 +58,30 @@ function App() {
           </Form>
         </Navbar.Collapse>
       </Navbar>
-
+      <br />
       <Container>
         <Row>
           <Col>
-          <Switch>
-            <route exact path = "/">
-              <Redirect to = "/restaurants"/>
-            </route>
-            <route exact path = "/about">
-              <About/> 
-            </route>
-            <route exact path = "/Restaurants">
-              <Restaurants/>
-            </route>
-            <route exact path = "/Restaurant/:id">
-              <Restaurant/>
-            </route>
-            <route>
-              <NotFound/>
-            </route>
-          </Switch>
+            <Switch>
+              <Route exact path="/">
+                <Redirect to="/Restaurants" />
+              </Route>
+              <Route exact path="/about">
+                <About />
+              </Route>
+              <Route exact path="/Restaurants">
+                <Restaurants />
+              </Route>
+              <Route path="/Restaurant/:id">
+                <Restaurant />
+              </Route>
+              <Route>
+                <NotFound />
+              </Route>
+            </Switch>
           </Col>
         </Row>
       </Container>
-
-      <br />
     </>
   );
 }

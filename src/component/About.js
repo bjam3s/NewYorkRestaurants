@@ -1,11 +1,11 @@
 import React from "react";
 import { Card, ListGroupItem } from "react-bootstrap";
 
-function About(props) {
+function About() {
     return (
        <Card>
             <Card.Title>About</Card.Title>
-            <Card.Subtitle>Student: James Bilik</Card.Subtitle>
+            <ListGroupItem>Student: James Bilik</ListGroupItem>
             <ListGroupItem>Student ID: 155500192</ListGroupItem>
             <ListGroupItem>Date: </ListGroupItem>
             <ListGroupItem>Project: WEB Assignment 3</ListGroupItem>
